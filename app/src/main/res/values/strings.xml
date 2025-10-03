@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BarCodeScanApp</string>
+    <string name="scam_cam_text">Escaneie o código de barras.</string>
+</resources>
