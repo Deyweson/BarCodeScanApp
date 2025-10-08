@@ -52,7 +52,9 @@ import androidx.compose.ui.graphics.asImageBitmap
 @Composable
 fun MainScreen(
     modifier: Modifier = Modifier,
-    mainViewModel: MainViewModel = viewModel()
+    mainViewModel: MainViewModel = viewModel(),
+    title: String,
+    nav: () -> Unit
 ) {
     val uiState = mainViewModel.uiState.collectAsState()
 
@@ -84,7 +86,11 @@ fun MainScreen(
 
 
     Scaffold(
-        topBar = { TopBarYou() },
+        topBar = { TopBarYou(
+            nav = nav,
+            title = title,
+            modifier = Modifier
+        ) },
         floatingActionButton = {
             ElevatedCard{
                 IconButton(onClick = {

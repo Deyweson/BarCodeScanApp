@@ -70,5 +70,7 @@ dependencies {
 
     implementation("com.simonsickle:composed-barcodes:1.3.0")
 
+    implementation("androidx.navigation:navigation-compose:2.7.4")
+
 
 }

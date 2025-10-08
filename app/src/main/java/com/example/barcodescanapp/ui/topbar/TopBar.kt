@@ -22,6 +22,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.barcodescanapp.R
 
 
@@ -58,7 +59,12 @@ fun TopBar(modifier: Modifier = Modifier){
 // Opção de TopBar do Material YOU
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBarYou(modifier: Modifier = Modifier){
+fun TopBarYou(
+    title: String,
+    modifier: Modifier = Modifier,
+    nav: () -> Unit
+
+){
 
     Surface (
         shape = RoundedCornerShape(
@@ -78,12 +84,12 @@ fun TopBarYou(modifier: Modifier = Modifier){
             ),
             title = {
                 Text(
-                    text = stringResource(R.string.app_name),
+                    text = title,
                     style = MaterialTheme.typography.titleLarge
                 )
             },
             navigationIcon = {
-                IconButton(onClick = {}) {
+                IconButton(onClick = nav) {
                     Icon(
                         imageVector = Icons.Default.Menu,
                         contentDescription = "Menu"

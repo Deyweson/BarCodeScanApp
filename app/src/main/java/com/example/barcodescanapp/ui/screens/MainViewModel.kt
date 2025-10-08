@@ -38,7 +38,7 @@ class MainViewModel : ViewModel() {
                 bitmap.setPixel(
                     x,
                     y,
-                    if (bitMatrix[x, y]) Color.BLACK else Color.TRANSPARENT
+                    if (bitMatrix[x, y]) Color.BLACK else Color.WHITE
                 )
             }
         }
